@@ -17,5 +17,6 @@ wget https://getcomposer.org/composer.phar
 php composer.phar install
 cd db
 mysql -ucooking -pcooking cooking < schema.sql
+php sample_data.php
 sudo service nginx stop
 sudo service apache2 restart
