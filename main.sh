@@ -8,10 +8,11 @@ mysql -uroot -e "CREATE USER 'cooking'@'localhost' IDENTIFIED BY 'cooking';"
 mysql -uroot -e "CREATE DATABASE cooking"
 mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'cooking'@'localhost' WITH GRANT OPTION"
 
-cd /var/www/
+cd /vagrant
 git clone https://github.com/bertrandmoulard/cooking.git
-cat $CURRENT_DIR/config.ini > /var/www/cooking/config.ini
-cd /var/www/cooking
+cat $CURRENT_DIR/config.ini > /vagrant/cooking/config.ini
+cd /vagrant/cooking
+ln -s /vagrant/cooking /var/www/
 wget https://getcomposer.org/composer.phar
 php composer.phar install
 cd db
